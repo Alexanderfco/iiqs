@@ -9,8 +9,16 @@ ${EMAIL}                  gestor_sb
 ${SENHA}                  123
 ${NOME_DOMINIO}           Teste Automatizado
 ${NOME_CATEGORIA}         Categoria testeee
+${EMAIL_INVALIDO}         ABCD
+${SENHA_INVALIDA}         987
 
 *** Keywords ***
+
+Efetuar Login com email e senha invalidos
+    Open Browser    ${URL}    ${BROWSER}
+    Maximize Browser Window
+    Efetuar Login com    ${EMAIL_INVALIDO}     ${SENHA_INVALIDA}
+
 Abrir Navegador e Efetuar Login
     Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
@@ -41,7 +49,12 @@ Enviar Formulário com o
     Click Element    xpath=//div[@class="sc-aXZVg bgiAWQ"]//button
 
 *** Test Cases ***
-TC001 - Registrar Domínio
+
+TC001 - Login Invalido
+    Efetuar Login com email e senha invalidos
+    Fechar Navegador
+
+TC002 - Registrar Domínio
     [Tags]    FluxoPrincipal
     ${domain_name}    Gerar String Aleatória
     Abrir Navegador e Efetuar Login
@@ -52,20 +65,20 @@ TC001 - Registrar Domínio
     Clicar e Aguardar Elemento    xpath=//div[@class="modal-footer"]//div[@class="sc-aXZVg bgiAWQ"]//button
     Fechar Navegador
 
-TC002 - Logout
+TC003 - Logout
     Abrir Navegador e Efetuar Login
     Clicar e Aguardar Elemento    (//*[contains(text(), "Sair")])[2]
     Clicar e Aguardar Elemento    //*[contains(text(), "Sim")]
     Fechar Navegador
 
-TC003 - Buscar Domínio cadastrado
+TC004 - Buscar Domínio cadastrado
     Abrir Navegador e Efetuar Login
     Clicar e Aguardar Elemento    xpath=//div[@title='Sistema de Biblioteca']//button
     Clicar e Aguardar Elemento    xpath=//div[@class="sc-aXZVg jawhTA"]//button[text()="Domínio"] 
     Clicar e Aguardar Elemento    xpath=//div[@class="sc-aXZVg jawhTA"]//button[text()="Buscar Domínio"]
     Fechar Navegador
 
-TC004 - Registrar Categoria
+TC005 - Registrar Categoria
     ${category_name}    Gerar String Aleatória
     Abrir Navegador e Efetuar Login
     Clicar e Aguardar Elemento    xpath=//div[@title='Sistema de Biblioteca']//button
@@ -74,4 +87,3 @@ TC004 - Registrar Categoria
     # Enviar Formulário com o ${category_name}
     # Clicar e Aguardar Elemento    xpath=//div[@class="modal-footer"]//div[@class="sc-aXZVg bgiAWQ"]//button
     Fechar Navegador
-
