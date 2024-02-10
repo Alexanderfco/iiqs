@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-02-10T12:55:43.319505" rpa="false" schemaversion="5">
+<suite id="s1" name="Iiqs" source="C:\Users\ALEX\Desktop\iiqs">
+<suite id="s1-s1" name="DominioTest" source="C:\Users\ALEX\Desktop\iiqs\DominioTest.robot">
+<test id="s1-s1-t1" name="TC005 - Registrar Categoria" line="81">
+<kw name="Gerar String Aleatória">
+<kw name="Generate Random String" owner="String">
+<msg time="2024-02-10T12:55:43.487032" level="INFO">${random_string} = UBHRuvyFnS</msg>
+<var>${random_string}</var>
+<arg>10</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2024-02-10T12:55:43.486034" elapsed="0.000998"/>
+</kw>
+<return>
+<value>${random_string}</value>
+<status status="PASS" start="2024-02-10T12:55:43.487032" elapsed="0.000000"/>
+</return>
+<msg time="2024-02-10T12:55:43.487032" level="INFO">${category_name} = UBHRuvyFnS</msg>
+<var>${category_name}</var>
+<doc>Gera uma string aleatória para uso nos testes</doc>
+<status status="PASS" start="2024-02-10T12:55:43.485075" elapsed="0.002955"/>
+</kw>
+<kw name="Abrir Navegador e Efetuar Login">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-02-10T12:55:43.489026" level="INFO">Opening browser 'chrome' to base url 'http://sistemas.t2mlab.com:3008/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-02-10T12:55:43.488030" elapsed="2.138730"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-02-10T12:55:45.627754" elapsed="0.130683"/>
+</kw>
+<kw name="Efetuar Login com">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-02-10T12:55:45.760433" level="INFO">Typing text 'gestor_sb' into text field 'id:formBasicEmail'.</msg>
+<arg>id:formBasicEmail</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-10T12:55:45.759436" elapsed="0.077791"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-02-10T12:55:45.838225" level="INFO">Typing text '123' into text field 'id:formBasicPassword'.</msg>
+<arg>id:formBasicPassword</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-10T12:55:45.837227" elapsed="0.051862"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-02-10T12:55:45.890085" level="INFO">Clicking element 'xpath=//div[@class='sc-aXZVg keSpkO']//button'.</msg>
+<arg>xpath=//div[@class='sc-aXZVg keSpkO']//button</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-10T12:55:45.889089" elapsed="0.033909"/>
+</kw>
+<arg>${EMAIL}</arg>
+<arg>${SENHA}</arg>
+<status status="PASS" start="2024-02-10T12:55:45.759436" elapsed="0.163562"/>
+</kw>
+<status status="PASS" start="2024-02-10T12:55:43.488030" elapsed="2.435965"/>
+</kw>
+<kw name="Clicar e Aguardar Elemento">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-02-10T12:55:47.925348" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-02-10T12:55:45.923995" elapsed="2.001353"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-02-10T12:55:47.926336" level="INFO">Clicking element 'xpath=//div[@title='Sistema de Biblioteca']//button'.</msg>
+<arg>${element_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-10T12:55:47.925348" elapsed="0.043872"/>
+</kw>
+<arg>xpath=//div[@title='Sistema de Biblioteca']//button</arg>
+<status status="PASS" start="2024-02-10T12:55:45.923995" elapsed="2.045225"/>
+</kw>
+<kw name="Clicar e Aguardar Elemento">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-02-10T12:55:49.970896" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-02-10T12:55:47.970218" elapsed="2.000678"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-02-10T12:55:49.970896" level="INFO">Clicking element 'xpath=//div[@class="sc-aXZVg jawhTA"]//button[text()="Categoria"]'.</msg>
+<arg>${element_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-10T12:55:49.970896" elapsed="0.036873"/>
+</kw>
+<arg>xpath=//div[@class="sc-aXZVg jawhTA"]//button[text()="Categoria"]</arg>
+<status status="PASS" start="2024-02-10T12:55:47.970218" elapsed="2.037551"/>
+</kw>
+<kw name="Clicar e Aguardar Elemento">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-02-10T12:55:52.009438" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-02-10T12:55:50.008765" elapsed="2.000673"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-02-10T12:55:52.010412" level="INFO">Clicking element 'xpath=//div[@class="sc-aXZVg jawhTA"]//button[text()="Cadastrar Categoria"]'.</msg>
+<arg>${element_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-02-10T12:55:52.009438" elapsed="0.039870"/>
+</kw>
+<arg>xpath=//div[@class="sc-aXZVg jawhTA"]//button[text()="Cadastrar Categoria"]</arg>
+<status status="PASS" start="2024-02-10T12:55:50.007769" elapsed="2.041539"/>
+</kw>
+<kw name="Fechar Navegador">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-02-10T12:55:52.050307" elapsed="2.101476"/>
+</kw>
+<status status="PASS" start="2024-02-10T12:55:52.050307" elapsed="2.101476"/>
+</kw>
+<status status="PASS" start="2024-02-10T12:55:43.484038" elapsed="10.668742"/>
+</test>
+<status status="PASS" start="2024-02-10T12:55:43.343413" elapsed="10.810365"/>
+</suite>
+<status status="PASS" start="2024-02-10T12:55:43.322468" elapsed="10.832308"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Iiqs">Iiqs</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="DominioTest">Iiqs.DominioTest</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-02-10T12:55:43.311526" level="WARN">Error in file 'C:\Users\ALEX\Desktop\iiqs\DominioTest.robot' on line 39: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+</errors>
+</robot>
